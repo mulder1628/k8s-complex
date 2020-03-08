@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // receive & respond to react application
-const app = express()
-const port = 3000
+const app = express();
+const port = 5000;
 
 // cross origin resource sharing allows req 1 domain to diff domain (port) api hosted on
 app.use(cors());
@@ -94,4 +94,4 @@ app.post('/values', async (req, res) => {
     res.send({working: true});
 });
 
-app.listen(5000, err => console.log(`listening on port port!`));
+app.listen(port, err => console.log(`listening on port: ${port}!`));
