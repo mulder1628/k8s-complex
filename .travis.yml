@@ -3,23 +3,23 @@ services:
     - docker
 
 before_install:
-    - docker build -t techlearn-gurumind/complex-client-test -f ./client/Dockerfile.dev ./client # build using Dockerfile.dev
+    - docker build -t kingfabric2/complex-client-test -f ./client/Dockerfile.dev ./client # build using Dockerfile.dev
     
 script:
     # [OLD VERSION] - docker run USERNAME/docker-react npm run test -- --coverage
-    - docker run -e CI=true techlearn-gurumind/complex-client-test npm run test
+    - docker run -e CI=true kingfabric2/complex-client-test npm run test
 
 after_success:
-    - docker build -t techlearn-gurumind/complex-client ./client
-    - docker build -t techlearn-gurumind/complex-nginx ./nginx
-    - docker build -t techlearn-gurumind/complex-server ./server
-    - docker build -t techlearn-gurumind/complex-worker ./worker
+    - docker build -t kingfabric2/complex-client ./client
+    - docker build -t kingfabric2/complex-nginx ./nginx
+    - docker build -t kingfabric2/complex-server ./server
+    - docker build -t kingfabric2/complex-worker ./worker
 
 # Log into the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push the images to the docker hub
-    - docker push techlearn-gurumind/complex-client
-    - docker push techlearn-gurumind/complex-nginx
-    - docker push techlearn-gurumind/complex-server
-    - docker push techlearn-gurumind/complex-worker
+    - docker push kingfabric2/complex-client
+    - docker push kingfabric2/complex-nginx
+    - docker push kingfabric2/complex-server
+    - docker push kingfabric2/complex-worker
