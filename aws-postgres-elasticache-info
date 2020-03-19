@@ -1,0 +1,25 @@
+DB instance id:
+docker-complex-postgres
+
+user:
+postgres
+
+master password:
+postgresPassword7
+
+Databasename: 
+fibvalues
+
+Endpoint
+docker-complex-postgres.ckby0kkrhohy.ap-southeast-1.rds.amazonaws.com
+===
+New Security Group: 
+docker-complex-sg
+
+Public Accessible: NO
+===
+
+ElastiCache - REDIS:
+Primary endpoint of the cluster:
+docker-complex-redis.tinzmu.0001.apse1.cache.amazonaws.com:6379
+this is used for REDIS_HOST in the env var (without the 6379 port part)
